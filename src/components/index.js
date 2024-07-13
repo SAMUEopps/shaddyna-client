@@ -13,7 +13,7 @@ import {
 import { DashboardAdmin, Categories, Products, Orders } from "./admin";
 import { UserProfile, UserOrders, SettingUser } from "./shop/dashboardUser";
 
-import { BrowserRouter as Router, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 /* Routing All page will be here */
 const AppRoutes = (props) => {
@@ -21,10 +21,10 @@ const AppRoutes = (props) => {
     <Router>
       <Routes>
         {/* Shop & Public Routes */}
-        <Routes exact path="/" component={Home} />
-        <Routes exact path="/wish-list" component={WishList} />
-        <Routes exact path="/products/:id" component={ProductDetails} />
-        <Routes
+        <Route exact path="/" component={Home} />
+        <Route exact path="/wish-list" component={WishList} />
+        <Route exact path="/products/:id" component={ProductDetails} />
+        <Route
           exact
           path="/products/category/:catId"
           component={ProductByCategory}
@@ -78,7 +78,7 @@ const AppRoutes = (props) => {
         {/* User Dashboard End */}
 
         {/* 404 Page */}
-        <Routes component={PageNotFound} />
+        <Route component={PageNotFound} />
       </Routes>
     </Router>
   );
