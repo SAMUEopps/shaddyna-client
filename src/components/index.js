@@ -21,64 +21,84 @@ const AppRoutes = (props) => {
     <Router>
       <Routes>
         {/* Shop & Public Routes */}
-        <Route exact path="/" component={Home} />
-        <Route exact path="/wish-list" component={WishList} />
-        <Route exact path="/products/:id" component={ProductDetails} />
-        <Route
-          exact
-          path="/products/category/:catId"
-          component={ProductByCategory}
-        />
-        <CartProtectedRoute
-          exact={true}
-          path="/checkout"
-          component={CheckoutPage}
+        <Route path="/" element={<Home />} />
+        <Route path="/wish-list" element={<WishList />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
+        <Route path="/products/category/:catId" element={<ProductByCategory />} />
+        <Route 
+          path="/checkout" 
+          element={
+            <CartProtectedRoute>
+              <CheckoutPage />
+            </CartProtectedRoute>
+          }
         />
         {/* Shop & Public Routes End */}
 
         {/* Admin Routes */}
-        <AdminProtectedRoute
-          exact={true}
-          path="/admin/dashboard"
-          component={DashboardAdmin}
+        <Route 
+          path="/admin/dashboard" 
+          element={
+            <AdminProtectedRoute>
+              <DashboardAdmin />
+            </AdminProtectedRoute>
+          }
         />
-        <AdminProtectedRoute
-          exact={true}
-          path="/admin/dashboard/categories"
-          component={Categories}
+        <Route 
+          path="/admin/dashboard/categories" 
+          element={
+            <AdminProtectedRoute>
+              <Categories />
+            </AdminProtectedRoute>
+          }
         />
-        <AdminProtectedRoute
-          exact={true}
-          path="/admin/dashboard/products"
-          component={Products}
+        <Route 
+          path="/admin/dashboard/products" 
+          element={
+            <AdminProtectedRoute>
+              <Products />
+            </AdminProtectedRoute>
+          }
         />
-        <AdminProtectedRoute
-          exact={true}
-          path="/admin/dashboard/orders"
-          component={Orders}
+        <Route 
+          path="/admin/dashboard/orders" 
+          element={
+            <AdminProtectedRoute>
+              <Orders />
+            </AdminProtectedRoute>
+          }
         />
         {/* Admin Routes End */}
 
         {/* User Dashboard */}
-        <ProtectedRoute
-          exact={true}
-          path="/user/profile"
-          component={UserProfile}
+        <Route 
+          path="/user/profile" 
+          element={
+            <ProtectedRoute>
+              <UserProfile />
+            </ProtectedRoute>
+          }
         />
-        <ProtectedRoute
-          exact={true}
-          path="/user/orders"
-          component={UserOrders}
+        <Route 
+          path="/user/orders" 
+          element={
+            <ProtectedRoute>
+              <UserOrders />
+            </ProtectedRoute>
+          }
         />
-        <ProtectedRoute
-          exact={true}
-          path="/user/setting"
-          component={SettingUser}
+        <Route 
+          path="/user/setting" 
+          element={
+            <ProtectedRoute>
+              <SettingUser />
+            </ProtectedRoute>
+          }
         />
         {/* User Dashboard End */}
 
         {/* 404 Page */}
-        <Route component={PageNotFound} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>
   );
