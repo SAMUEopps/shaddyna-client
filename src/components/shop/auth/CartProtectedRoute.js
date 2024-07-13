@@ -1,16 +1,16 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Routes, Navigate } from "react-router-dom";
 import { isAuthenticate } from "./fetchApi";
 
 const CartProtectedRoute = ({ component: Component, ...rest }) => (
-  <Route
+  <Routes
     {...rest}
     render={(props) =>
       JSON.parse(localStorage.getItem("cart")).length !== 0 &&
       isAuthenticate() ? (
         <Component {...props} />
       ) : (
-        <Redirect
+        <Navigate
           to={{
             pathname: "/",
             state: { from: props.location },

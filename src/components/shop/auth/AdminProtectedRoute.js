@@ -1,15 +1,15 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Routes, Navigate } from "react-router-dom";
 import { isAuthenticate, isAdmin } from "./fetchApi";
 
 const AdminProtectedRoute = ({ component: Component, ...rest }) => (
-  <Route
+  <Routes
     {...rest}
     render={(props) =>
       isAdmin() && isAuthenticate() ? (
         <Component {...props} />
       ) : (
-        <Redirect
+        <Navigate
           to={{
             pathname: "/user/profile",
             state: { from: props.location },

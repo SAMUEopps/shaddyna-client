@@ -1,12 +1,12 @@
 import React, { Fragment, useContext } from "react";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { logout } from "./Action";
 import { DashboardUserContext } from "./Layout";
 
 const Sidebar = (props) => {
   const { data } = useContext(DashboardUserContext);
 
-  const history = useHistory();
+  const history = useNavigate();
   const location = useLocation();
 
   return (

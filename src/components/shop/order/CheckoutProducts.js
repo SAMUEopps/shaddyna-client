@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useContext, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { LayoutContext } from "../layout";
 import { subTotal, quantity, totalCost } from "../partials/Mixins";
 
@@ -12,7 +12,7 @@ import DropIn from "braintree-web-drop-in-react";
 const apiURL = process.env.REACT_APP_API_URL;
 
 export const CheckoutComponent = (props) => {
-  const history = useHistory();
+  const history = useNavigate();
   const { data, dispatch } = useContext(LayoutContext);
 
   const [state, setState] = useState({
@@ -167,7 +167,7 @@ export const CheckoutComponent = (props) => {
 };
 
 const CheckoutProducts = ({ products }) => {
-  const history = useHistory();
+  const history = useNavigate();
 
   return (
     <Fragment>

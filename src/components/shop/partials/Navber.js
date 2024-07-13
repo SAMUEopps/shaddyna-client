@@ -1,5 +1,5 @@
 import React, { Fragment, useContext } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./style.css";
 
 import { logout } from "./Action";
@@ -7,7 +7,7 @@ import { LayoutContext } from "../index";
 import { isAdmin } from "../auth/fetchApi";
 
 const Navber = (props) => {
-  const history = useHistory();
+  const history = useNavigate();
   const location = useLocation();
 
   const { data, dispatch } = useContext(LayoutContext);

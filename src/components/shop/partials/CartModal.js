@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { LayoutContext } from "../index";
 import { cartListProduct } from "./FetchApi";
 import { isAuthenticate } from "../auth/fetchApi";
@@ -9,7 +9,7 @@ import { subTotal, quantity, totalCost } from "./Mixins";
 const apiURL = process.env.REACT_APP_API_URL;
 
 const CartModal = () => {
-  const history = useHistory();
+  const history = useNavigate();
 
   const { data, dispatch } = useContext(LayoutContext);
   const products = data.cartProduct;

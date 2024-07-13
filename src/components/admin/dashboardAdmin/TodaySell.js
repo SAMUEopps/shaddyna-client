@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import moment from "moment";
 import { DashboardContext } from "./";
 import { todayAllOrders } from "./Action";
@@ -7,7 +7,7 @@ import { todayAllOrders } from "./Action";
 const apiURL = process.env.REACT_APP_API_URL;
 
 const SellTable = () => {
-  const history = useHistory();
+  const history = useNavigate();
   const { data, dispatch } = useContext(DashboardContext);
 
   useEffect(() => {

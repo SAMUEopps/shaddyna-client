@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Submenu = (props) => {
   const { categoryId, category, product } = props.value;
-  const history = useHistory();
+  const history = useNavigate();
   return (
     <Fragment>
       {/* Submenu Section */}

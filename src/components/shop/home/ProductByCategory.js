@@ -1,12 +1,12 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Layout from "../layout";
 import { productByCategory } from "../../admin/products/FetchApi";
 
 const apiURL = process.env.REACT_APP_API_URL;
 
 const Submenu = ({ category }) => {
-  const history = useHistory();
+  const history = useNavigate();
   return (
     <Fragment>
       {/* Submenu Section */}
@@ -45,7 +45,7 @@ const Submenu = ({ category }) => {
 };
 
 const AllProduct = ({ products }) => {
-  const history = useHistory();
+  const history = useNavigate();
   const category =
     products && products.length > 0 ? products[0].pCategory.cName : "";
   return (
