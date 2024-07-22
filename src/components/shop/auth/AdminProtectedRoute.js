@@ -22,30 +22,24 @@ const AdminProtectedRoute = ({ component: Component, ...rest }) => (
 
 export default AdminProtectedRoute;*/
 
-import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import { isAuthenticate, isAdmin } from "./fetchApi";
+import React from 'react';
+import { Route, Navigate, useLocation } from 'react-router-dom';
+import { isAdmin, isAuthenticate } from './fetchApi';
 
 const AdminProtectedRoute = ({ element: Component, ...rest }) => {
-  const isAuthenticated = isAuthenticate();
-  const isAdminUser = isAdmin();
+  const location = useLocation();
 
   return (
-    <Routes>
-      <Route
-        {...rest}
-        element={
-          isAdminUser && isAuthenticated ? (
-            <Component />
-          ) : (
-            <Navigate
-              to="/user/profile"
-              replace
-            />
-          )
-        }
-      />
-    </Routes>
+    <Route
+      {...rest}
+      element={
+        isAdmin() && isAuthenticate() ? (
+          <Component />
+        ) : (
+          <Navigate to={{ pathname: '/user/profile', state: { from: location } }} replace />
+        )
+      }
+    />
   );
 };
 
