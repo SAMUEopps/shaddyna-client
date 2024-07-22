@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import { Routes, Navigate } from "react-router-dom";
 import { isAuthenticate, isAdmin } from "./fetchApi";
 
@@ -20,4 +20,34 @@ const AdminProtectedRoute = ({ component: Component, ...rest }) => (
   />
 );
 
+export default AdminProtectedRoute;*/
+
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { isAuthenticate, isAdmin } from "./fetchApi";
+
+const AdminProtectedRoute = ({ element: Component, ...rest }) => {
+  const isAuthenticated = isAuthenticate();
+  const isAdminUser = isAdmin();
+
+  return (
+    <Routes>
+      <Route
+        {...rest}
+        element={
+          isAdminUser && isAuthenticated ? (
+            <Component />
+          ) : (
+            <Navigate
+              to="/user/profile"
+              replace
+            />
+          )
+        }
+      />
+    </Routes>
+  );
+};
+
 export default AdminProtectedRoute;
+
