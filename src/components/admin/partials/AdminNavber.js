@@ -36,11 +36,11 @@ const AdminNavber = (props) => {
         {/*  Large Screen Show  */}
         <div className="hidden lg:block">
           <span
-            onClick={(e) => history.push("/admin/dashboard")}
+            onClick={(e) => history("/admin/dashboard")}
             style={{ letterSpacing: "0.70rem" }}
             className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
           >
-            Hayroo
+            Shaddyna
           </span>
         </div>
         {/* Small Screen Show */}
@@ -61,11 +61,11 @@ const AdminNavber = (props) => {
             />
           </svg>
           <span
-            onClick={(e) => history.push("/admin/dashboard")}
+            onClick={(e) => history("/admin/dashboard")}
             style={{ letterSpacing: "0.10rem" }}
             className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
           >
-            Hayroo
+            Shaddyna
           </span>
         </div>
         {/* Both Screen show */}
@@ -124,7 +124,7 @@ const AdminNavber = (props) => {
             <div className="userDropdown absolute right-0 mt-1 bg-gray-200 rounded">
               <li className="flex flex-col text-gray-700">
                 <span
-                  onClick={(e) => history.push("/")}
+                  onClick={(e) => history("/")}
                   className="flex space-x-1 py-2 px-8 hover:bg-gray-400 cursor-pointer"
                 >
                   <span>

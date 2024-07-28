@@ -25,76 +25,49 @@ const AppRoutes = (props) => {
         <Route path="/wish-list" element={<WishList />} />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/products/category/:catId" element={<ProductByCategory />} />
-        <Route 
-          path="/checkout" 
-          element={
-            <CartProtectedRoute>
-              <CheckoutPage />
-            </CartProtectedRoute>
-          }
+        <Route
+          path="/checkout"
+          element={<CartProtectedRoute component={CheckoutPage} />}
         />
+
         {/* Shop & Public Routes End */}
 
         {/* Admin Routes */}
-        <Route 
-          path="/admin/dashboard" 
-          element={
-            <AdminProtectedRoute>
-              <DashboardAdmin />
-            </AdminProtectedRoute>
-          }
+        <Route
+          path="/admin/dashboard"
+          element={<AdminProtectedRoute component={DashboardAdmin} />}
         />
-        <Route 
-          path="/admin/dashboard/categories" 
-          element={
-            <AdminProtectedRoute>
-              <Categories />
-            </AdminProtectedRoute>
-          }
+
+        <Route
+          path="/admin/dashboard/categories"
+          element={<AdminProtectedRoute component={Categories} />}
         />
-        <Route 
-          path="/admin/dashboard/products" 
-          element={
-            <AdminProtectedRoute>
-              <Products />
-            </AdminProtectedRoute>
-          }
+        <Route
+          path="/admin/dashboard/products"
+          element={<AdminProtectedRoute component={Products} />}
         />
-        <Route 
-          path="/admin/dashboard/orders" 
-          element={
-            <AdminProtectedRoute>
-              <Orders />
-            </AdminProtectedRoute>
-          }
+        <Route
+          path="/admin/dashboard/orders"
+          element={<AdminProtectedRoute component={Orders} />}
         />
         {/* Admin Routes End */}
 
         {/* User Dashboard */}
-        <Route 
-          path="/user/profile" 
-          element={
-            <ProtectedRoute>
-              <UserProfile />
-            </ProtectedRoute>
-          }
+        <Route
+          path="/user/profile"
+          element={<ProtectedRoute component={UserProfile} />}
         />
-        <Route 
-          path="/user/orders" 
-          element={
-            <ProtectedRoute>
-              <UserOrders />
-            </ProtectedRoute>
-          }
+
+        <Route
+          path="/user/orders"
+          element={<ProtectedRoute component={UserOrders} />}
         />
-        <Route 
-          path="/user/setting" 
-          element={
-            <ProtectedRoute>
-              <SettingUser />
-            </ProtectedRoute>
-          }
+
+        <Route
+          path="/user/setting"
+          element={<ProtectedRoute component={SettingUser} />}
         />
+
         {/* User Dashboard End */}
 
         {/* 404 Page */}
@@ -105,3 +78,4 @@ const AppRoutes = (props) => {
 };
 
 export default AppRoutes;
+
