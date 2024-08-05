@@ -54,7 +54,7 @@ const Product = () => {
               >
                 <div className="md:w-1/2 md:flex md:items-center">
                   <img
-                    onClick={(e) => history.push(`/products/${product._id}`)}
+                    onClick={(e) => history(`/products/${product._id}`)}
                     className="cursor-pointer md:h-20 md:w-20 object-cover object-center"
                     src={`${apiURL}/uploads/products/${product.pImages[0]}`}
                     alt="wishListproduct"
