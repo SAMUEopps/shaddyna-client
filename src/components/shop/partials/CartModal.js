@@ -122,7 +122,7 @@ const CartModal = () => {
                               <span className="text-sm text-gray-400">
                                 Subtotoal :
                               </span>{" "}
-                              ${subTotal(item._id, item.pPrice)}.00
+                              Ksh{subTotal(item._id, item.pPrice)}.00
                             </div>{" "}
                             {/* SUbtotal Count */}
                           </div>
@@ -171,17 +171,17 @@ const CartModal = () => {
                   <div
                     className="px-4 py-2 bg-black text-white text-center cursor-pointer"
                     onClick={(e) => {
-                      history.push("/checkout");
+                      history("/checkout");
                       cartModalOpen();
                     }}
                   >
-                    Checkout ${data.cartTotalCost}.00
+                    Checkout ksh{data.cartTotalCost}.00
                   </div>
                 ) : (
                   <div
                     className="px-4 py-2 bg-black text-white text-center cursor-pointer"
                     onClick={(e) => {
-                      history.push("/");
+                      history("/");
                       cartModalOpen();
                       dispatch({
                         type: "loginSignupError",
@@ -193,7 +193,7 @@ const CartModal = () => {
                       });
                     }}
                   >
-                    Checkout ${data.cartTotalCost}.00
+                    Checkout Ksh{data.cartTotalCost}.00
                   </div>
                 )}
               </Fragment>

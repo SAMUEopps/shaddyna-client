@@ -18,7 +18,7 @@ const Submenu = (props) => {
             </span>
             <span
               className="hover:text-yellow-700 cursor-pointer"
-              onClick={(e) => history.push(`/products/category/${categoryId}`)}
+              onClick={(e) => history(`/products/category/${categoryId}`)}
             >
               {category}
             </span>

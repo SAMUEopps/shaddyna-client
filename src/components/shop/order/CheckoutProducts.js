@@ -181,7 +181,7 @@ const CheckoutProducts = ({ products }) => {
               >
                 <div className="md:flex md:items-center md:space-x-4">
                   <img
-                    onClick={(e) => history.push(`/products/${product._id}`)}
+                    onClick={(e) => history(`/products/${product._id}`)}
                     className="cursor-pointer md:h-20 md:w-20 object-cover object-center"
                     src={`${apiURL}/uploads/products/${product.pImages[0]}`}
                     alt="wishListproduct"
@@ -190,13 +190,13 @@ const CheckoutProducts = ({ products }) => {
                     {product.pName}
                   </div>
                   <div className="md:ml-6 font-semibold text-gray-600 text-sm">
-                    Price : ${product.pPrice}.00{" "}
+                    Price : Kshs{product.pPrice}.00{" "}
                   </div>
                   <div className="md:ml-6 font-semibold text-gray-600 text-sm">
                     Quantitiy : {quantity(product._id)}
                   </div>
                   <div className="font-semibold text-gray-600 text-sm">
-                    Subtotal : ${subTotal(product._id, product.pPrice)}.00
+                    Subtotal : Kshs{subTotal(product._id, product.pPrice)}.00
                   </div>
                 </div>
               </div>
@@ -211,3 +211,4 @@ const CheckoutProducts = ({ products }) => {
 };
 
 export default CheckoutProducts;
+

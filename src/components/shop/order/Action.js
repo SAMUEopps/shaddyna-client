@@ -75,7 +75,7 @@ export const pay = async (
                   dispatch({ type: "orderSuccess", payload: true });
                   setState({ clientToken: "", instance: {} });
                   dispatch({ type: "loading", payload: false });
-                  return history.push("/");
+                  return history("/");
                 } else if (resposeData.error) {
                   console.log(resposeData.error);
                 }

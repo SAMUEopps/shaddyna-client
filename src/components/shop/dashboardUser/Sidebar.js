@@ -68,7 +68,7 @@ const Sidebar = (props) => {
           </div>
           <hr />
           <div
-            onClick={(e) => history.push("/user/setting")}
+            onClick={(e) => history("/user/setting")}
             className={`${
               location.pathname === "/user/setting"
                 ? "border-r-4 border-yellow-700 bg-gray-200"
