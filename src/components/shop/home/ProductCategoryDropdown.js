@@ -37,7 +37,7 @@ const CategoryList = () => {
               <Fragment key={index}>
                 <div
                   onClick={(e) =>
-                    history.push(`/products/category/${item._id}`)
+                    history(`/products/category/${item._id}`)
                   }
                   className="col-span-1 m-2 flex flex-col items-center justify-center space-y-2 cursor-pointer"
                 >
